@@ -9,7 +9,6 @@
   <link rel="preload" href="assets/css/style.css" as="style">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" href="assets/images/logo.png">
-  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -36,7 +35,8 @@
       </ul>
 
       <div class="nav-actions">
-        <a href="https://www.junneshenning.com/resources/Junnes_Henning_Resume.pdf" target="_blank" rel="noopener" class="btn btn-download">Descargar CV</a>
+        <a href="https://www.junneshenning.com/resources/Junnes_Henning_Resume.pdf" target="_blank" rel="noopener" class="btn btn-outline">Descargar CV</a>
+        <a href="#contact" class="btn btn-primary">Hablemos</a>
         <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
           <span class="bar"></span>
           <span class="bar"></span>
@@ -51,16 +51,37 @@
     <div class="hero-bg"></div>
     <div class="container hero-content">
       <div class="hero-text">
-        <span class="hero-badge">Disponible para nuevos proyectos</span>
-        <h1 class="hero-title">Hola, soy <span class="gradient-text">Junnes Henning</span></h1>
+        <div class="hero-badge">Disponible para nuevos proyectos</div>
+        <h1 class="hero-title">Junnes Henning</h1>
         <p class="hero-subtitle">SysAdmin, Cloud Architect, IT Manager &amp; Consultant</p>
         <p class="hero-description">
           Profesional en la administración, soporte y mantenimiento de infraestructuras TI. Evaluo entornos físicos y cloud para mejorar el rendimiento y la seguridad, optimizando procesos de negocio mediante automatización.
         </p>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Años de experiencia</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">7+</span>
+            <span class="stat-label">Proyectos entregados</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Certificaciones</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">Caracas</span>
+            <span class="stat-label">Venezuela</span>
+          </div>
+        </div>
+
         <div class="hero-cta">
           <a href="#contact" class="btn btn-primary">Contáctame</a>
           <a href="https://www.junneshenning.com/resources/Junnes_Henning_Resume.pdf" target="_blank" rel="noopener" class="btn btn-outline">Descargar CV</a>
         </div>
+
         <div class="hero-social">
           <a href="https://linkedin.com/in/" target="_blank" rel="noopener" aria-label="LinkedIn"><span>in</span></a>
           <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><span>octocat</span></a>
@@ -68,9 +89,9 @@
       </div>
 
       <div class="hero-visual">
-        <div class="floating-card">
-          <img src="assets/images/logo.png" alt="Junnes Henning" class="floating-img">
-          <div class="floating-overlay">
+        <div class="hero-card">
+          <img src="assets/images/logo.png" alt="Junnes Henning" class="hero-card-img">
+          <div class="hero-card-body">
             <h3>Junnes Henning</h3>
             <p>SysAdmin · Cloud Architect · IT Manager · Consultant</p>
           </div>
@@ -79,36 +100,56 @@
     </div>
   </section>
 
+  <!-- ======================= TRUSTED BY (CLIENT LOGOS) ======================= -->
+  <section class="trusted-by" aria-label="Clientes">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Confían en mi trabajo</h2>
+        <p class="section-subtitle">Proyectos para clientes en distintos sectores.</p>
+      </div>
+      <div class="trusted-logos">
+        <img src="assets/images/portfolio/licores-mundiales-logo.png" alt="Licores Mundiales">
+        <img src="assets/images/portfolio/logoscorp-logo.png" alt="Logoscorp">
+        <img src="assets/images/portfolio/dronena-logo.png" alt="Droguería Nena">
+        <img src="assets/images/portfolio/xana-logo.png" alt="Farmacias Xana">
+        <img src="assets/images/portfolio/beca-logo.png" alt="Beca Inmobiliaria">
+        <img src="assets/images/portfolio/mindmelt-logo.png" alt="Mind Melt">
+        <img src="assets/images/portfolio/hachar-logo.png" alt="The Hachar Law Group">
+      </div>
+    </div>
+  </section>
+
   <!-- ======================= SOBRE MÍ ======================= -->
   <section class="section" id="about" aria-label="Sobre mí">
     <div class="container">
       <div class="section-header">
+        <span class="section-kicker">Sobre mí</span>
         <h2 class="section-title">Conóceme</h2>
-        <p class="section-subtitle">Sobre mí</p>
+        <p class="section-subtitle">Un poco de mi trayectoria y enfoque profesional.</p>
       </div>
 
       <div class="about-grid">
-        <div class="about-text">
+        <div class="about-text reveal">
           <p>
             Nacido y criado en Caracas, Venezuela. Soy un entusiasta SysAdmin especializado en plataformas de servidores Unix/Linux, con <strong>10+ años de experiencia</strong> y certificado en ITILv3. Estoy dedicado a evaluar entornos de infraestructura física y cloud para realizar mejoras que aumenten el rendimiento y la seguridad, optimizando procesos clave de negocio a través de la automatización, agregando valor a cada proyecto en el que participo.
           </p>
           <div class="about-stats">
-            <div class="stat">
+            <div class="stat-item">
               <span class="stat-number">10+</span>
               <span class="stat-label">Años de experiencia</span>
             </div>
-            <div class="stat">
-              <span class="stat-number">1</span>
-              <span class="stat-label">Certificación ITILv3</span>
+            <div class="stat-item">
+              <span class="stat-number">ITILv3</span>
+              <span class="stat-label">Certificación</span>
             </div>
-            <div class="stat">
+            <div class="stat-item">
               <span class="stat-number">7+</span>
               <span class="stat-label">Proyectos en portafolio</span>
             </div>
           </div>
         </div>
 
-        <div class="about-details">
+        <div class="about-details reveal">
           <div class="detail-card">
             <h4>Rol</h4>
             <p>SysAdmin &amp; IT Support Professional</p>
@@ -138,29 +179,30 @@
   <section class="section bg-alt" id="expertise" aria-label="Lo que hago">
     <div class="container">
       <div class="section-header">
+        <span class="section-kicker">Experiencia</span>
         <h2 class="section-title">Lo que hago</h2>
-        <p class="section-subtitle">Experiencia</p>
+        <p class="section-subtitle">Áreas de especialización y servicios que ofrezco.</p>
       </div>
 
       <div class="services-grid">
-        <div class="service-card">
+        <div class="service-card reveal">
           <div class="service-icon">🐧</div>
-          <h3>Soporte Linux &amp; Soluciones OpenSource</h3>
+          <h3>Soporte Linux &amp; OpenSource</h3>
           <p>Especializado en plataformas de servidores Unix/Linux, realizando mejoras que aumentan el rendimiento y la seguridad.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card reveal">
           <div class="service-icon">☁️</div>
-          <h3>Consultoría TI &amp; Migraciones de Hosting</h3>
+          <h3>Consultoría TI &amp; Migraciones</h3>
           <p>Evaluación de entornos de infraestructura física y cloud para mejorar el rendimiento y la seguridad.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card reveal">
           <div class="service-icon">⚙️</div>
           <h3>Bash Scripting &amp; Automatización</h3>
           <p>Optimización de procesos clave de negocio mediante automatización, agregando valor a cada proyecto.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card reveal">
           <div class="service-icon">🛡️</div>
-          <h3>Mejoras de Seguridad &amp; Recuperación Web Hackeada</h3>
+          <h3>Seguridad &amp; Recuperación Web</h3>
           <p>Informática forense y recuperación de sitios web hackeados junto con robustas mejoras de seguridad.</p>
         </div>
       </div>
@@ -171,12 +213,13 @@
   <section class="section" id="skills" aria-label="Herramientas y habilidades">
     <div class="container">
       <div class="section-header">
+        <span class="section-kicker">Habilidades</span>
         <h2 class="section-title">Con qué trabajo</h2>
-        <p class="section-subtitle">Herramientas &amp; Habilidades</p>
+        <p class="section-subtitle">Herramientas, tecnologías y plataformas que domino.</p>
       </div>
 
       <div class="skills-grid">
-        <div class="skill-category">
+        <div class="skill-category reveal">
           <h4>OS &amp; Administración</h4>
           <div class="skill-chips">
             <span class="skill-chip"><img src="assets/images/icons/devicons/linux-original.svg" alt="Linux" onerror="this.style.display='none'"> Linux</span>
@@ -185,8 +228,7 @@
             <span class="skill-chip"><img src="assets/images/icons/devicons/bash-original.svg" alt="Shell Scripting" onerror="this.style.display='none'"> Shell Scripting</span>
           </div>
         </div>
-
-        <div class="skill-category">
+        <div class="skill-category reveal">
           <h4>Web Stack</h4>
           <div class="skill-chips">
             <span class="skill-chip"><img src="assets/images/icons/devicons/php-original.svg" alt="LAMP Stack" onerror="this.style.display='none'"> LAMP Stack</span>
@@ -196,8 +238,7 @@
             <span class="skill-chip"><img src="assets/images/icons/devicons/magento-original.svg" alt="Magento" onerror="this.style.display='none'"> Magento</span>
           </div>
         </div>
-
-        <div class="skill-category">
+        <div class="skill-category reveal">
           <h4>Infraestructura &amp; Servicios</h4>
           <div class="skill-chips">
             <span class="skill-chip"><img src="assets/images/icons/devicons/amazonwebservices-original.svg" alt="AWS" onerror="this.style.display='none'"> AWS</span>
@@ -215,11 +256,12 @@
   </section>
 
   <!-- ======================= PORTAFOLIO ======================= -->
-  <section class="section bg-alt" id="portfolio" aria-label="Proyectos">
+  <section class="section bg-alt" id="portfolio" aria-label="Portafolio">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Mi portafolio</h2>
-        <p class="section-subtitle">Proyectos en diferentes campos y clientes.</p>
+        <span class="section-kicker">Portafolio</span>
+        <h2 class="section-title">Mis proyectos</h2>
+        <p class="section-subtitle">Case studies y trabajos recientes para clientes.</p>
       </div>
 
       <div class="portfolio-filters">
@@ -233,114 +275,122 @@
 
       <div class="portfolio-grid" id="portfolio-grid">
         <!-- Licores Mundiales -->
-        <article class="portfolio-item" data-category="Retail">
+        <article class="portfolio-item reveal" data-category="Retail">
           <div class="portfolio-image">
             <img src="assets/images/portfolio/licores-mundiales-logo.png" alt="Licores Mundiales">
           </div>
           <div class="portfolio-content">
             <h3>Licores Mundiales</h3>
             <p class="portfolio-excerpt">Cloud architecture design and deployment on AWS for the e-commerce website. Ongoing support for new feature rollouts on a complex multi-service architecture.</p>
-            <div class="portfolio-meta">
-              <span class="portfolio-category">Retail</span>
-              <span class="portfolio-screens">Licores Mundiales · 1 screen</span>
+            <div class="portfolio-tags">
+              <span>Retail</span>
+              <span>AWS</span>
+              <span>E-commerce</span>
             </div>
-            <a href="#" class="portfolio-link">View Screens <span>→</span></a>
+            <a href="#" class="portfolio-link">Ver proyecto <span>→</span></a>
           </div>
         </article>
 
         <!-- Logoscorp -->
-        <article class="portfolio-item" data-category="Technology">
+        <article class="portfolio-item reveal" data-category="Technology">
           <div class="portfolio-image">
             <img src="assets/images/portfolio/logoscorp-logo.png" alt="Logoscorp">
           </div>
           <div class="portfolio-content">
             <h3>Logoscorp</h3>
             <p class="portfolio-excerpt">Cloud infrastructure architecture design and deployment for the corporate website, ensuring high availability and optimal performance.</p>
-            <div class="portfolio-meta">
-              <span class="portfolio-category">Technology</span>
-              <span class="portfolio-screens">Logoscorp · 1 screen</span>
+            <div class="portfolio-tags">
+              <span>Technology</span>
+              <span>Cloud</span>
+              <span>HA</span>
             </div>
-            <a href="#" class="portfolio-link">View Screens <span>→</span></a>
+            <a href="#" class="portfolio-link">Ver proyecto <span>→</span></a>
           </div>
         </article>
 
         <!-- Drogueria Nena -->
-        <article class="portfolio-item" data-category="Healthcare">
+        <article class="portfolio-item reveal" data-category="Healthcare">
           <div class="portfolio-image">
-            <img src="assets/images/portfolio/dronena-logo.png" alt="Drogueria Nena">
+            <img src="assets/images/portfolio/dronena-logo.png" alt="Droguería Nena">
           </div>
           <div class="portfolio-content">
             <h3>Droguería Nena</h3>
             <p class="portfolio-excerpt">Cloud architecture design and configuration for the drugstore website. Ongoing maintenance and support of the cloud infrastructure to ensure uninterrupted operations.</p>
-            <div class="portfolio-meta">
-              <span class="portfolio-category">Healthcare</span>
-              <span class="portfolio-screens">Droguería Nena · 1 screen</span>
+            <div class="portfolio-tags">
+              <span>Healthcare</span>
+              <span>Cloud</span>
+              <span>Support</span>
             </div>
-            <a href="#" class="portfolio-link">View Screens <span>→</span></a>
+            <a href="#" class="portfolio-link">Ver proyecto <span>→</span></a>
           </div>
         </article>
 
         <!-- Farmacias Xana -->
-        <article class="portfolio-item" data-category="Healthcare">
+        <article class="portfolio-item reveal" data-category="Healthcare">
           <div class="portfolio-image">
             <img src="assets/images/portfolio/xana-logo.png" alt="Farmacias Xana">
           </div>
           <div class="portfolio-content">
             <h3>Farmacias Xana</h3>
             <p class="portfolio-excerpt">Cloud architecture design and deployment for the corporate website. Continuous infrastructure maintenance and support, including N8N automation workflows for daily pharmacy closing report processing.</p>
-            <div class="portfolio-meta">
-              <span class="portfolio-category">Healthcare</span>
-              <span class="portfolio-screens">Farmacias Xana · 1 screen</span>
+            <div class="portfolio-tags">
+              <span>Healthcare</span>
+              <span>N8N</span>
+              <span>Automation</span>
             </div>
-            <a href="#" class="portfolio-link">View Screens <span>→</span></a>
+            <a href="#" class="portfolio-link">Ver proyecto <span>→</span></a>
           </div>
         </article>
 
         <!-- Beca Inmobiliaria -->
-        <article class="portfolio-item" data-category="Real Estate">
+        <article class="portfolio-item reveal" data-category="Real Estate">
           <div class="portfolio-image">
             <img src="assets/images/portfolio/beca-logo.png" alt="Beca Inmobiliaria">
           </div>
           <div class="portfolio-content">
             <h3>Beca Inmobiliaria</h3>
             <p class="portfolio-excerpt">Cloud architecture and infrastructure design on GCP. Security and vulnerability audit with corresponding system hardening. SEO strategy implementation to improve organic search positioning.</p>
-            <div class="portfolio-meta">
-              <span class="portfolio-category">Real Estate</span>
-              <span class="portfolio-screens">Beca Inmobiliaria · 1 screen</span>
+            <div class="portfolio-tags">
+              <span>Real Estate</span>
+              <span>GCP</span>
+              <span>Security</span>
+              <span>SEO</span>
             </div>
-            <a href="#" class="portfolio-link">View Screens <span>→</span></a>
+            <a href="#" class="portfolio-link">Ver proyecto <span>→</span></a>
           </div>
         </article>
 
         <!-- Mind Melt -->
-        <article class="portfolio-item" data-category="Technology">
+        <article class="portfolio-item reveal" data-category="Technology">
           <div class="portfolio-image">
             <img src="assets/images/portfolio/mindmelt-logo.png" alt="Mind Melt Creative Agency">
           </div>
           <div class="portfolio-content">
             <h3>Mind Melt Creative Agency</h3>
             <p class="portfolio-excerpt">Cloud infrastructure architecture design and deployment for the creative agency website, optimizing performance and availability.</p>
-            <div class="portfolio-meta">
-              <span class="portfolio-category">Technology</span>
-              <span class="portfolio-screens">Mind Melt · 1 screen</span>
+            <div class="portfolio-tags">
+              <span>Technology</span>
+              <span>Cloud</span>
+              <span>Performance</span>
             </div>
-            <a href="#" class="portfolio-link">View Screens <span>→</span></a>
+            <a href="#" class="portfolio-link">Ver proyecto <span>→</span></a>
           </div>
         </article>
 
         <!-- The Hachar Law Group -->
-        <article class="portfolio-item" data-category="Legal">
+        <article class="portfolio-item reveal" data-category="Legal">
           <div class="portfolio-image">
             <img src="assets/images/portfolio/hachar-logo.png" alt="The Hachar Law Group">
           </div>
           <div class="portfolio-content">
             <h3>The Hachar Law Group</h3>
             <p class="portfolio-excerpt">Cloud infrastructure architecture design and deployment for the law firm website, ensuring security and high availability.</p>
-            <div class="portfolio-meta">
-              <span class="portfolio-category">Legal</span>
-              <span class="portfolio-screens">The Hachar Law Group · 1 screen</span>
+            <div class="portfolio-tags">
+              <span>Legal</span>
+              <span>Security</span>
+              <span>HA</span>
             </div>
-            <a href="#" class="portfolio-link">View Screens <span>→</span></a>
+            <a href="#" class="portfolio-link">Ver proyecto <span>→</span></a>
           </div>
         </article>
       </div>
@@ -348,15 +398,16 @@
   </section>
 
   <!-- ======================= TRAYECTORIA ======================= -->
-  <section class="section" id="experience" aria-label="Proyectos destacados">
+  <section class="section" id="experience" aria-label="Trayectoria">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Mis trabajos</h2>
-        <p class="section-subtitle">Experiencia</p>
+        <span class="section-kicker">Trayectoria</span>
+        <h2 class="section-title">Experiencia laboral</h2>
+        <p class="section-subtitle">Roles y empresas donde he dejado huella.</p>
       </div>
 
       <div class="timeline">
-        <div class="timeline-item">
+        <div class="timeline-item" style="--delay: 0.1s">
           <div class="timeline-date">Jun 2022 – Presente</div>
           <div class="timeline-content">
             <div class="timeline-header">
@@ -371,7 +422,7 @@
           </div>
         </div>
 
-        <div class="timeline-item">
+        <div class="timeline-item" style="--delay: 0.2s">
           <div class="timeline-date">Jun 2025 – Presente</div>
           <div class="timeline-content">
             <div class="timeline-header">
@@ -386,7 +437,7 @@
           </div>
         </div>
 
-        <div class="timeline-item">
+        <div class="timeline-item" style="--delay: 0.3s">
           <div class="timeline-date">Sep 2016 – Jun 2022</div>
           <div class="timeline-content">
             <div class="timeline-header">
@@ -401,7 +452,7 @@
           </div>
         </div>
 
-        <div class="timeline-item">
+        <div class="timeline-item" style="--delay: 0.4s">
           <div class="timeline-date">Feb 2009 – Ago 2016</div>
           <div class="timeline-content">
             <div class="timeline-header">
@@ -416,7 +467,7 @@
           </div>
         </div>
 
-        <div class="timeline-item">
+        <div class="timeline-item" style="--delay: 0.5s">
           <div class="timeline-date">Sep 2006 – Feb 2009</div>
           <div class="timeline-content">
             <div class="timeline-header">
@@ -438,14 +489,15 @@
   <section class="section bg-alt" id="certifications" aria-label="Certificaciones">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Credenciales</h2>
-        <p class="section-subtitle">Certificaciones</p>
+        <span class="section-kicker">Credenciales</span>
+        <h2 class="section-title">Certificaciones</h2>
+        <p class="section-subtitle">Certificaciones profesionales y en curso.</p>
       </div>
 
       <div class="cert-grid">
         <!-- Google Workspace -->
-        <div class="cert-card">
-          <div class="cert-badge">Earned</div>
+        <div class="cert-card reveal">
+          <div class="cert-badge earned">Earned</div>
           <h3>Google Workspace Administrator Professional Certificate</h3>
           <div class="cert-issuer">Google / Coursera</div>
           <p>Certificación profesional que cubre la administración de Google Workspace, gestión de usuarios y grupos, configuración de seguridad, gobernanza de datos, cumplimiento de correo electrónico y gestión de servicios de la suite de productividad y colaboración de Google.</p>
@@ -456,7 +508,7 @@
         </div>
 
         <!-- ITILv3 -->
-        <div class="cert-card">
+        <div class="cert-card reveal">
           <div class="cert-badge earned">Earned</div>
           <h3>ITILv3 Foundation</h3>
           <div class="cert-issuer">AXELOS</div>
@@ -467,7 +519,7 @@
         </div>
 
         <!-- AWS -->
-        <div class="cert-card">
+        <div class="cert-card reveal">
           <div class="cert-badge in-progress">In Progress</div>
           <h3>AWS Solutions Architect Associate</h3>
           <div class="cert-issuer">Amazon Web Services</div>
@@ -481,27 +533,17 @@
     </div>
   </section>
 
-  <!-- ======================= PROYECTOS Y VENTURAS ======================= -->
-  <section class="section ventures" id="ventures" aria-label="Proyectos y ventures">
-    <div class="container">
-      <div class="venture-card">
-        <h2>Projects &amp; Ventures</h2>
-        <p>Dos sitios para visitar más de mi trabajo.</p>
-        <a href="https://www.junneshenning.com" target="_blank" rel="noopener" class="venture-link">www.junneshenning.com <span>→</span></a>
-      </div>
-    </div>
-  </section>
-
   <!-- ======================= CONTACTO ======================= -->
   <section class="section" id="contact" aria-label="Contacto">
     <div class="container">
       <div class="section-header">
+        <span class="section-kicker">Contacto</span>
         <h2 class="section-title">Hablemos</h2>
-        <p class="section-subtitle">Contáctame</p>
+        <p class="section-subtitle">¿Tienes un proyecto en mente? Escríbeme.</p>
       </div>
 
       <div class="contact-grid">
-        <div class="contact-info">
+        <div class="contact-info reveal">
           <div class="info-item">
             <span class="info-label">Email</span>
             <a href="mailto:contact@henning.icu" class="info-value">contact@henning.icu</a>
@@ -516,7 +558,7 @@
           </div>
         </div>
 
-        <div class="contact-form-wrapper">
+        <div class="contact-form-wrapper reveal">
           <form class="contact-form" id="contact-form" novalidate>
             <div class="form-group">
               <label for="name">Nombre</label>
