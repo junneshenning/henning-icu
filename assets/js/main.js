@@ -74,37 +74,35 @@
   // ---------- Scroll reveal (Intersection Observer) ----------
   const revealElements = document.querySelectorAll(".reveal");
 
-  const observerOptions = {
-    threshold: 0.12,
-    rootMargin: "0px 0px -60px 0px",
-  };
-
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+  );
 
   revealElements.forEach((el) => revealObserver.observe(el));
 
   // Marcar elementos que se revelan con scroll
-  document.querySelectorAll(".section, .service-card, .skill-category, .portfolio-item, .timeline-item, .cert-card").forEach((el) => {
-    el.classList.add("reveal");
-  });
+  document
+    .querySelectorAll(
+      ".section, .service-card, .skill-category, .portfolio-item, .timeline-item, .cert-card"
+    )
+    .forEach((el) => el.classList.add("reveal"));
 
   // ---------- Filtro de portafolio ----------
   filterBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       const filter = btn.getAttribute("data-filter");
 
-      // Cambiar botón activo
       filterBtns.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
 
-      // Filtrar items
       portfolioItems.forEach((item) => {
         const category = item.getAttribute("data-category");
         const show = filter === "all" || category === filter;
@@ -118,43 +116,67 @@
     });
   });
 
-  // ---------- Formulario de contacto ----------
+  // ---------- Formulario de contacto (Resend vía GitHub Actions) ----------
   contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const formData = new FormData(contactForm);
     const data = Object.fromEntries(formData.entries());
 
-    // Nota: GitHub Pages no soporta backend. Esta versión muestra confirmación
-    // y abre el cliente de correo con los datos ya rellenados.
-    const subject = encodeURIComponent(data.subject || "Consulta desde el portafolio");
-    const body = encodeURIComponent(
-      `Nombre: ${data.name}\nCorreo: ${data.email}\nAsunto: ${data.subject || "-"}\n\nMensaje:\n${data.message}`
-    );
-    const mailto = `mailto:contact@henning.icu?subject=${subject}&body=${body}`;
+    // Para que esto funcione necesitas:
+    // 1. Crear un secreto RESEND_API_KEY en tu repo (Settings → Secrets and variables → Actions)
+    // 2. Crear un Personal Access Token de GitHub (con scope: repo) y ponerlo abajo en GITHUB_PAT
+    //    (ó mejor: usar un servicio como Formspree/EmailJS si no quieres exponer tokens)
+    const GITHUB_PAT = ""; // ← PEGA TU PERSONAL ACCESS TOKEN DE GITHUB AQUÍ (scope: repo)
+
+    const owner = "junneshenning";
+    const repo = "henning-icu";
+
+    if (!GITHUB_PAT) {
+      showFormNote(
+        "Falta configurar el token de GitHub en assets/js/main.js",
+        "error"
+      );
+      return;
+    }
 
     try {
-      // Intento de envío via Formspree si se configura (opcional).
-      // Descomenta y configura tu endpoint de Formspree para recibir emails reales:
-      /*
-      const response = await fetch("https://formspree.io/f/TU_ID", {
-        method: "POST",
-        headers: { "Accept": "application/json" },
-        body: formData,
-      });
-      if (response.ok) {
-        showFormNote("¡Mensaje enviado con éxito! Te responderé a la brevedad.", "success");
-        contactForm.reset();
-        return;
-      }
-      throw new Error("No se pudo enviar");
-      */
+      const response = await fetch(
+        `https://api.github.com/repos/${owner}/${repo}/dispatches`,
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/vnd.github+json",
+            Authorization: `Bearer ${GITHUB_PAT}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            event_type: "contact-form-submit",
+            client_payload: {
+              name: data.name,
+              email: data.email,
+              subject: data.subject || "Sin asunto",
+              message: data.message,
+            },
+          }),
+        }
+      );
 
-      // Fallback: abrir cliente de correo predeterminado
-      window.location.href = mailto;
-      showFormNote("Se abrirá tu cliente de correo para completar el envío.", "success");
+      if (response.ok) {
+        showFormNote(
+          "¡Mensaje enviado con éxito! Te responderé a la brevedad.",
+          "success"
+        );
+        contactForm.reset();
+      } else {
+        throw new Error("No se pudo disparar el envío");
+      }
     } catch (err) {
-      showFormNote("Hubo un error al enviar el mensaje. Inténtalo de nuevo.", "error");
+      console.error(err);
+      showFormNote(
+        "Hubo un error al enviar el mensaje. Inténtalo de nuevo.",
+        "error"
+      );
     }
   });
 
@@ -187,11 +209,9 @@
   );
   sections.forEach((section) => observerNav.observe(section));
 
-  // Estilos activos para los enlaces de nav
   const style = document.createElement("style");
   style.textContent = `
     .nav-links a.active { color: var(--primary); }
   `;
   document.head.appendChild(style);
-
 })();

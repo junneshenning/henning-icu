@@ -1,0 +1,27 @@
+name: Send Contact Email via Resend
+
+on:
+  repository_dispatch:
+    types: [contact-form-submit]
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send email via Resend
+        run: |
+          curl -X POST https://api.resend.com/emails \
+            -H "Authorization: Bearer ${{ secrets.RESEND_API_KEY }}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "from": "Junnes Henning <onboarding@resend.dev>",
+              "to": "contact@henning.icu",
+              "subject": "Nuevo mensaje de portafolio: ${{ github.event.client_payload.subject }}",
+              "reply_to": "${{ github.event.client_payload.email }}",
+              "html": "<h2>Nuevo contacto desde tu portafolio</h2>" \
+                "<p><strong>Nombre:</strong> ${{ github.event.client_payload.name }}</p>" \
+                "<p><strong>Correo:</strong> ${{ github.event.client_payload.email }}</p>" \
+                "<p><strong>Asunto:</strong> ${{ github.event.client_payload.subject }}</p>" \
+                "<p><strong>Mensaje:</strong><br>${{ github.event.client_payload.message }}</p>" \
+                "<hr><p><small>Enviado desde junneshenning.github.io/henning-icu</small></p>"
+            }'
