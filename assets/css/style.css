@@ -144,6 +144,7 @@ ul {
   align-items: center;
   justify-content: space-between;
   height: 68px;
+  padding: 0 1.5rem;
 }
 
 .nav-logo {
@@ -157,20 +158,16 @@ ul {
 }
 
 .nav-logo-img {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
+  height: 34px;
+  width: auto;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  object-fit: contain;
 }
 
 .nav-logo-text {
-  display: none;
-}
-
-@media (min-width: 640px) {
-  .nav-logo-text {
-    display: block;
-  }
+  display: none !important;
 }
 
 .nav-links {
